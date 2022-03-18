@@ -1,15 +1,8 @@
-const Engine = require('./engine')
-
 class CarBody {
     parts = []
 
-    constructor () {
-        this.engine = new Engine()
-    }
-
-    install () {
-        this.engine.install()
-        this.parts.push(this.engine)
+    install (engine) {
+        this.parts.push(engine)
     }
 
     welding () {

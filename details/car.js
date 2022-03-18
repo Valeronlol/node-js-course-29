@@ -3,13 +3,13 @@ const Engine = require('./engine')
 
 class Car {
     constructor () {
-        this.carBody = new CarBody()
         this.engine = new Engine()
+        this.carBody = new CarBody()
     }
 
     create () {
-        this.carBody.install()
-        this.engine.install()
+        this.carBody.install(this.engine)
+        this.carBody.welding()
 
         return this
     }
