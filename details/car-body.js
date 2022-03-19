@@ -1,22 +1,21 @@
-const Engine = require('./engine')
-
 class CarBody {
     parts = []
 
-    constructor () {
-        this.engine = new Engine()
+    constructor() {
+
     }
 
-    install () {
-        this.engine.install()
-        this.parts.push(this.engine)
+    install() {
+        const engine = require('./engine')
+        engine.install()
+        this.parts.push(engine)
     }
 
-    welding () {
+    welding() {
         this.parts.forEach(part => {
             console.log(`Welding car part: ${part.constructor.name}`)
         })
     }
 }
 
-module.exports = CarBody
+module.exports = new CarBody()
