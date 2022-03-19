@@ -1,20 +1,19 @@
-const CarBody = require('./car-body')
-const Engine = require('./engine')
-
 class Car {
-    constructor () {
-        this.carBody = new CarBody()
-        this.engine = new Engine()
+    constructor() {
+        const carBody = require('./car-body')
+        const engine = require('./engine')
+        this.carBody = carBody
+        this.engine = engine
     }
 
-    create () {
+    create() {
         this.carBody.install()
         this.engine.install()
 
         return this
     }
 
-    run () {
+    run() {
         if (!this.carBody || !this.engine) {
             throw new Error('Can\'t run car with non installed parts.')
         }
@@ -24,4 +23,4 @@ class Car {
     }
 }
 
-module.exports = Car
+module.exports = new Car()
