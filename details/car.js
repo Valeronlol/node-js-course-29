@@ -1,10 +1,10 @@
 const CarBody = require('./car-body')
 const Engine = require('./engine')
 
-class Car {
+module.exports = class Car {
     constructor () {
-        this.carBody = new CarBody()
-        this.engine = new Engine()
+        this.carBody = new CarBody(Engine)
+        this.engine = new Engine(this.carBody)
     }
 
     create () {
@@ -23,5 +23,3 @@ class Car {
         console.log('The car started, good luck!')
     }
 }
-
-module.exports = Car
