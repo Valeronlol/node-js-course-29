@@ -1,10 +1,8 @@
-const Engine = require('./engine')
-
-class CarBody {
+module.exports = class CarBody {
     parts = []
 
-    constructor () {
-        this.engine = new Engine()
+    constructor (Engine) {
+        this.engine = new Engine(this)
     }
 
     install () {
@@ -18,5 +16,3 @@ class CarBody {
         })
     }
 }
-
-module.exports = CarBody
