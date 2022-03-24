@@ -1,8 +1,6 @@
-const CarBody = require('./car-body')
-
 class Engine {
-    constructor () {
-        this.carBody = new CarBody()
+    constructor (carbody) {
+        this.carBody = carbody
     }
 
     install () {
