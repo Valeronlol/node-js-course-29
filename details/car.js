@@ -4,7 +4,7 @@ const Engine = require('./engine')
 class Car {
     constructor () {
         this.carBody = new CarBody()
-        this.engine = new Engine()
+        this.engine = new Engine(this.carBody)
     }
 
     create () {

@@ -4,7 +4,7 @@ class CarBody {
     parts = []
 
     constructor () {
-        this.engine = new Engine()
+        this.engine = new Engine(this)
     }
 
     install () {
