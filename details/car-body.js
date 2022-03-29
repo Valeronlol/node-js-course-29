@@ -1,22 +1,20 @@
-const Engine = require('./engine')
-
 class CarBody {
-    parts = []
+  parts = [];
 
-    constructor () {
-        this.engine = new Engine()
-    }
+  constructor(Engine) {
+    this.engine = new Engine(this);
+  }
 
-    install () {
-        this.engine.install()
-        this.parts.push(this.engine)
-    }
+  install() {
+    this.engine.install();
+    this.parts.push(this.engine);
+  }
 
-    welding () {
-        this.parts.forEach(part => {
-            console.log(`Welding car part: ${part.constructor.name}`)
-        })
-    }
+  welding() {
+    this.parts.forEach((part) => {
+      console.log(`Welding car part: ${part.constructor.name}`);
+    });
+  }
 }
 
-module.exports = CarBody
+module.exports = CarBody;
