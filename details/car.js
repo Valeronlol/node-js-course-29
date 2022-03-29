@@ -24,4 +24,6 @@ class Car {
   }
 }
 
-module.exports = Car;
+const car = new Car();
+
+module.exports = car;
